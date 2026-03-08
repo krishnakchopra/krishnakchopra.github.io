@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On writing and thinking in public - Krishna Chopra</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #666666;
+      --link: #0066cc;
+      --link-hover: #004499;
+      --border: #dddddd;
+      --max-width: 680px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --fg: #e8e8e8;
+      --muted: #999999;
+      --link: #6699dd;
+      --link-hover: #88bbff;
+      --border: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 18px;
+      line-height: 1.8;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* Header */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .site-title:hover {
+      color: var(--link);
+    }
+
+    #theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-family: inherit;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    #theme-toggle:hover {
+      color: var(--fg);
+      border-color: var(--fg);
+    }
+
+    /* Post */
+    .post-meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-family: 'Courier New', Courier, monospace;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    .post-body {
+      margin-top: 32px;
+    }
+
+    .post-body p {
+      margin-bottom: 22px;
+    }
+
+    .post-body h2 {
+      font-size: 1.25rem;
+      margin-top: 36px;
+      margin-bottom: 14px;
+    }
+
+    .post-body h3 {
+      font-size: 1.05rem;
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+
+    .post-body a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .post-body a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    .post-body blockquote {
+      border-left: 3px solid var(--border);
+      padding-left: 16px;
+      color: var(--muted);
+      margin: 24px 0;
+      font-style: italic;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* Back link */
+    .back-link {
+      margin-top: 48px;
+    }
+
+    .back-link a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .back-link a:hover {
+      color: var(--link);
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .site-footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      color: var(--link);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a class="site-title" href="/">Krishna Chopra</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode">Dark Mode</button>
+    </header>
+
+    <article>
+      <h1>On writing and thinking in public</h1>
+      <div class="post-meta">March 8, 2026</div>
+
+      <div class="post-body">
+        <p>
+          There is something uncomfortable about publishing your thoughts before they are fully formed.
+          Every sentence you write becomes a record of what you believed at a particular moment &mdash;
+          a commitment you might later want to revise, or quietly forget.
+        </p>
+
+        <p>
+          And yet I think the discomfort is worth it. Writing forces a kind of clarity that private
+          thinking rarely demands. When you have to explain an idea to someone who wasn't inside your
+          head as it formed, you discover quickly which parts of it were solid and which were just
+          the feeling of understanding, masquerading as the real thing.
+        </p>
+
+        <blockquote>
+          Writing is thinking made visible. The discipline of articulation is also a discipline of thought.
+        </blockquote>
+
+        <p>
+          The public part matters too, in a different way. The possibility that someone might read
+          what you wrote &mdash; and disagree with it, or point out something you missed &mdash;
+          introduces a useful kind of accountability. Thoughts that never face scrutiny tend to ossify.
+          They become part of the furniture of your mind rather than something you continue to examine.
+        </p>
+
+        <h2>The fear of being wrong</h2>
+
+        <p>
+          The main objection to writing in public is the fear of being wrong in front of other people.
+          This fear is not irrational. Being wrong publicly has social costs. But I think those costs
+          are generally much smaller than they feel, and the benefits of updating your beliefs through
+          feedback are larger than they appear.
+        </p>
+
+        <p>
+          What actually builds credibility over time is not being right from the start, but being
+          willing to engage seriously with ideas, change your mind when the evidence warrants it,
+          and acknowledge when you were mistaken. The people I find most intellectually trustworthy
+          are exactly those who have visibly changed their minds about things.
+        </p>
+
+        <h2>Starting anyway</h2>
+
+        <p>
+          This is the first thing I've published here. I don't yet know what this site will become,
+          or which of these ideas I'll still hold in five years. That uncertainty is fine.
+          The point isn't to arrive at this already knowing &mdash; it's to think through things
+          in writing, and see what comes out.
+        </p>
+      </div>
+    </article>
+
+    <div class="back-link">
+      <a href="/">&larr; Back to all posts</a>
+    </div>
+
+    <footer class="site-footer">
+      <p>
+        &copy; 2026 Krishna Chopra &middot;
+        <a href="https://github.com/krishnakchopra/krishnakchopra.github.io" target="_blank" rel="noopener">Source</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.setAttribute('data-theme', 'dark');
+      toggle.textContent = 'Light Mode';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        root.removeAttribute('data-theme');
+        toggle.textContent = 'Dark Mode';
+        localStorage.setItem('theme', 'light');
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        toggle.textContent = 'Light Mode';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>

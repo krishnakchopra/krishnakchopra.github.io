@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna Chopra</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #666666;
+      --link: #0066cc;
+      --link-hover: #004499;
+      --border: #dddddd;
+      --max-width: 680px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --fg: #e8e8e8;
+      --muted: #999999;
+      --link: #6699dd;
+      --link-hover: #88bbff;
+      --border: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 18px;
+      line-height: 1.7;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* Header */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .site-title:hover {
+      color: var(--link);
+    }
+
+    /* Dark mode toggle */
+    #theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-family: inherit;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    #theme-toggle:hover {
+      color: var(--fg);
+      border-color: var(--fg);
+    }
+
+    /* Bio */
+    .bio {
+      margin-bottom: 48px;
+    }
+
+    .bio p {
+      color: var(--fg);
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .bio a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .bio a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 32px 0;
+    }
+
+    /* Post list */
+    .posts {
+      list-style: none;
+    }
+
+    .post-item {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .post-date {
+      color: var(--muted);
+      font-size: 0.88rem;
+      white-space: nowrap;
+      font-family: 'Courier New', Courier, monospace;
+      min-width: 90px;
+    }
+
+    .post-title {
+      font-size: 1rem;
+    }
+
+    .post-title a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .post-title a:hover {
+      color: var(--link);
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .site-footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      color: var(--link);
+    }
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      .post-item {
+        flex-direction: column;
+        gap: 2px;
+      }
+      .post-date {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a class="site-title" href="/">Krishna Chopra</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode">Dark Mode</button>
+    </header>
+
+    <section class="bio">
+      <p>
+        I write about whatever I find interesting &mdash; economics, math, technology, and ideas at their intersections.
+        Based in Canada.
+      </p>
+      <p>
+        You can reach me at
+        <a href="mailto:krishna@example.com">krishna@example.com</a>
+        or on <a href="https://github.com/krishnakchopra" target="_blank" rel="noopener">GitHub</a>.
+      </p>
+    </section>
+
+    <hr>
+
+    <ul class="posts">
+      <li class="post-item">
+        <span class="post-date">2026 Mar 08</span>
+        <span class="post-title">
+          <a href="./posts/first-post.html">On writing and thinking in public</a>
+        </span>
+      </li>
+      <!-- Add new posts above this line, following the same format -->
+    </ul>
+
+    <footer class="site-footer">
+      <p>
+        &copy; 2026 Krishna Chopra &middot;
+        <a href="https://github.com/krishnakchopra/krishnakchopra.github.io" target="_blank" rel="noopener">Source</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    // Load saved preference
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.setAttribute('data-theme', 'dark');
+      toggle.textContent = 'Light Mode';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        root.removeAttribute('data-theme');
+        toggle.textContent = 'Dark Mode';
+        localStorage.setItem('theme', 'light');
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        toggle.textContent = 'Light Mode';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>
